@@ -5,7 +5,7 @@ Customer.create(name: "Michael Yeroshalmi" , preference: "American" , budget: 10
 Customer.create(name: "Shamss Hammami" , preference: "Ethiopian" , budget: 20, location: "Montrose")
 Customer.create(name: "Amanda Atzil" , preference: "Mexican" , budget: 10, location: "The Heights")
 Customer.create(name: "Dora Johnson", preference: "Vegan" , budget: 25, location: "Third Ward" )
-Customer.create(name: "Olivia Bent" , preference: "Mexican", budget: 5, location: "Eastside" )
+Customer.create(name: "Olivia Bent" , preference: "Chinese", budget: 5, location: "Eastside" )
 Customer.create(name: "Alex Espinoza", preference: "Indian" , budget: 15 , location: "Third Ward" )
 Customer.create(name: "Abi Martin" , preference: "Ethiopian", budget: 75, location: "Downtown" )
 
@@ -22,4 +22,12 @@ Restaurant.create(name: "Lucy's Ethiopian Restaurant" , opening_time: "11:00", c
 
 
 Order.create(customer: "Cassandra Montoya", restaurant: "Bombay Pizza")
-Order.create(customer: , restaurant: )
+Order.create(customer: "Chantal Wallace", restaurant: "Fufu Cafe")
+Order.create(customer: "Nadia Nik", restaurant: "Chachos")
+Order.create(customer: "Michael Yeroshalmi", restaurant: "Houston's")
+Order.create(customer: "Shamss Hammami", restaurant: "The Blue Nile")
+Order.create(customer: "Amanda Atzil", restaurant: "Chachos")
+Order.create(customer: "Dora Johnson", restaurant: "Green Seed Vegan Cafe")
+Order.create(customer: "Olivia Bent", restaurant: "Dim Sum King")
+Order.create(customer: "Alex Espinoza", restaurant: "Doshi House")
+Order.create(customer: "Abi Martin", restaurant: "Lucy's Ethiopian Restaurant")
