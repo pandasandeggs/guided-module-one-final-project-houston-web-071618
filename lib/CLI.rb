@@ -61,7 +61,7 @@ class CLI
     Restaurant.where(["food_type = ?", preference]).each do |restaurant|
       puts restaurant.name
     end
-    new_search
+    gets_customer_choice
   end
   # finds restaurants based on the type of food/customer preference
 
@@ -87,7 +87,7 @@ class CLI
     Restaurant.where(["affordability = ?", searchTerm]).each do |restaurant|
       puts restaurant.name
     end
-    new_search
+    gets_customer_choice
   end
   # finds restaurants based on the affordability
 
@@ -102,7 +102,7 @@ class CLI
     Restaurant.where(["location = ?", location]).each do |restaurant|
       puts restaurant.name
     end
-    new_search
+    gets_customer_choice
   end
   # finds restaurants based on the location
 
@@ -124,9 +124,26 @@ class CLI
     new_search
   end
 
-  def customer_choice
+
+
+  def self.gets_customer_choice
     puts "Which local restaurant would you like to try? "
     choice = gets.chomp
+    restaurant = Restaurant.find_by(name:choice)
+    time_check(restaurant)
+  end
+
+  def self.time_check(restaurant)
+    opening_hour = hour_of(restaurant.opening_time)
+    closing_hour = hour_of(restaurant.closing_time)
+    now = hour_of(Time.now.utc) - 5
+    #binding.pry
+    unless opening_hour < now && now < closing_hour
+      puts "Sorry. This restaurant is closed at the moment."
+    else
+      puts "#{restaurant.name} is currently open!"
+    end
+    new_search
   end
 
   def self.run
@@ -141,3 +158,8 @@ class CLI
 end
 # binding.pry
 # CLI.greet
+
+
+def hour_of(timestamp)
+  ((timestamp.to_i % 86400) / 60)/60
+end
