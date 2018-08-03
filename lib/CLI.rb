@@ -9,7 +9,7 @@ class CLI
   # creates a new CLI
 
   def self.greet
-    puts 'Welcome to IndiEats! Your guide to locally owned independant restaurants!'
+    puts 'Welcome to IndiEats! Your guide to locally owned independent restaurants!'
   end
   # welcomes customer to the app
 
@@ -124,8 +124,6 @@ class CLI
     new_search
   end
 
-
-
   def self.gets_customer_choice
     puts "Which local restaurant would you like to try? "
     choice = gets.chomp
@@ -156,8 +154,6 @@ class CLI
   # runs the CLI
 
 end
-# binding.pry
-# CLI.greet
 
 
 def hour_of(timestamp)
